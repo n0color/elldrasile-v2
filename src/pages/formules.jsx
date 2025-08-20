@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const formulas = [
   {
-    id: "formula1",
+    id: "1",
     name: "",
     inputs: [
       { key: "MS", label: "Атакующий стат" },
@@ -13,10 +13,10 @@ const formulas = [
       { key: "d6", label: "D6 кубик" },
       { key: "secd6", label: "Второй D6 кубик" }
     ],
-    realForm: ({ MS, Consta, d6, secd6 }) => Math.floor(MS * d6 + Consta + secd6)
+    realForm: ({ MS, Consta, d6, secd6 }) => M0366ath.floor(MS * d6 + Consta + secd6)
   },
   {
-    id: "formula2",
+    id: "2",
     name: "222",
     inputs: [
       { key: "MS", label: "Атакующий стат" },
@@ -29,7 +29,6 @@ const formulas = [
 ];
 
 export default function Calculate() {
-  // По умолчанию выбрана первая формула
   const [selectedId, setSelectedId] = useState(formulas[0].id);
   const selectedFormula = formulas.find(f => f.id === selectedId);
 
@@ -62,10 +61,11 @@ export default function Calculate() {
     }
     setResult(selectedFormula.realForm(values));
   }
-
+  console.log(inputs)
   return (
     <>
       <Header />
+      <div className="calcDiv">
       <select onChange={handleSelect} value={selectedId}>
         {formulas.map(f => (
           <option key={f.id} value={f.id}>{f.name}</option>
@@ -82,6 +82,7 @@ export default function Calculate() {
       ))}
       <button onClick={handleCalc}>Рассчитать</button>
       {result !== null && <div>Результат: {result}</div>}
+      </div>
     </>
   );
 }

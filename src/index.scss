@@ -49,6 +49,8 @@ h2 {
 }
 
 input {
+  width: 80%;
+  max-width: 480px;
   padding: 8px 12px;
   border: 1px solid #B1AB86;
   border-radius: 8px;
@@ -58,6 +60,9 @@ input {
   color: #0A400C;
   outline: none;
   transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   &:focus {
     border-color: #0A400C;
     background-color: #fff;
