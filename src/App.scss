@@ -1,0 +1,55 @@
+.header {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-top: 25px;
+  background-color: #B1AB86;
+  width: 80%;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px #0a400c85;
+  @media (max-width: 768px) {
+    margin-top: 10px;
+    width: 90%;
+    border-radius: 15px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 5px;
+    width: 70%;
+  }
+  
+-ms-user-select: none; 
+		-moz-user-select: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
+
+  .svg {
+    transition: all 0.2s;
+    &:hover {
+      filter: drop-shadow(5px 5px 5px #6e8544);
+      transform: scale(1.1);
+      transition: all 0.2s;
+    }
+    
+
+  }
+  .logo {
+    height: 100px;
+    @media (max-width: 768px) {
+      height: 50px;
+    }
+    @media (max-width: 480px) {
+      height: 30px;
+    }
+  }
+  .calc {
+    height: 50px;
+    @media (max-width: 768px) {
+      height: 30px;
+    }
+    @media (max-width: 480px) {
+      height: 20px;
+    }
+  }
+}
