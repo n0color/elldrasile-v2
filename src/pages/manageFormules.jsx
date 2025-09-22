@@ -111,6 +111,13 @@ export default function ManageFormules() {
     setMod("");
   }
 
+  function delFormula(formulaId) {
+    const oldformules = JSON.parse(localStorage.getItem('formules'));
+    const updatedFormules = oldformules.filter((formula) => formula.id !== formulaId);
+    localStorage.setItem('formules', JSON.stringify(updatedFormules));
+    setFormules(updatedFormules);
+  }
+
   return (
     <>
       <Header />
@@ -122,6 +129,7 @@ export default function ManageFormules() {
             <h3>{formule.name}</h3>
             <p>{formule.inputs.map((input) => input.label).join(", ")}</p>
             <p>{formule.formula}</p>
+            <button type="button" id={formule.id} onClick={e => delFormula(formule.id)}>Удалить формулу</button>
           </div>
         ))}
         <h2>Добавить формулу</h2>

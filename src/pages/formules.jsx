@@ -212,13 +212,12 @@ export default function Calculate() {
       <div className="calcDiv">
         <h1>Калькулятор формул</h1>
         
-        <div style={{marginBottom: '20px'}}>
+        <div>
           <label htmlFor="formulaSelect">Выберите формулу:</label>
           <select 
             id="formulaSelect"
             onChange={handleSelect} 
             value={selectedId}
-            style={{marginLeft: '10px', padding: '5px'}}
           >
             {formulas.map(f => (
               <option key={f.id} value={String(f.id)}>{f.name}</option>
@@ -226,11 +225,11 @@ export default function Calculate() {
           </select>
         </div>
 
-        <Link to={"/manage"} style={{display: 'block', marginBottom: '20px'}}>
+        <Link to={"/manage"}>
           Управление формулами
         </Link>
 
-        <div style={{marginBottom: '20px'}}>
+        <div>
           <h3>Параметры:</h3>
           {
             selectedFormula.inputs.map(input => (
