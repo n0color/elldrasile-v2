@@ -5,6 +5,7 @@ body {
   height: 100%;
   box-sizing: border-box;
   background-color: #FEFAE0;
+  font-family: 'Poppins', sans-serif;
   #root {
     display: flex;
     flex-direction: column;
@@ -14,12 +15,13 @@ body {
   }
 }
 h1 {
+  padding: 1px;
+  text-align: center;
   color: #0A400C;
   font-size: 48px;
   font-weight: 700;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-family: 'Poppins', sans-serif;
   @media (max-width: 768px) {
     font-size: 32px;
   }
@@ -36,7 +38,6 @@ h2 {
   font-weight: 500;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-family: 'Poppins', sans-serif;
   @media (max-width: 768px) {
     font-size: 24px;
   }
@@ -49,13 +50,12 @@ h2 {
 }
 
 input {
-  width: 80%;
+  width: 100%;
   max-width: 480px;
-  padding: 8px 12px;
+  padding: 8px 0px;
   border: 1px solid #B1AB86;
   border-radius: 8px;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-size: 16px;  
   background-color: #FEFAE0;
   color: #0A400C;
   outline: none;
@@ -67,5 +67,70 @@ input {
     border-color: #0A400C;
     background-color: #fff;
   }
+  @media (max-width: 600px) {
+    width: 80%;
+  }
 }
+
+.minitext {
+  margin: 0px;
+  padding: 0px;
+  color: #808080;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #B1AB86; 
+  color: #FFFFFF; 
+  font-size: 16px;  
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.2s; 
+  &:hover {
+    background-color: #858064; 
+  }
+  
+  &:active {
+    transform: scale(0.95); 
+  }
+  
+  &:disabled {
+    background-color: #D3D3D3; 
+    color: #FFFFFF; 
+    cursor: not-allowed; 
+  }
+}
+a {
+  color: #0A400C; 
+  font-weight: 500; 
+  transition: color 0.3s, text-shadow 0.3s; 
+  &:hover {
+    color: #2E8B2D; 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+  }
+  
+  &:active {
+    color: #1E5A1E; 
+  }
+}
+.inputComponent {
+  width: 80%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1vh;
+  label {
+    font-size: 14px;
+  }
+  select {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+  }
+}
+
+
+
 

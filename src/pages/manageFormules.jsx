@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Header from "../components/header";
 import "../styles/formules.scss";
+import "../styles/index.scss";
+import Footer from "../components/footer";
 
 export default function ManageFormules() {
   const [formules, setFormules] = useState([]);
@@ -124,14 +126,13 @@ export default function ManageFormules() {
       <div className="calcDiv">
         <h1>Управление формулами</h1>
         <h2>Формулы</h2>
-        {formules.map((formule) => (
+        {formules.length > 0  ? formules.map((formule) => (
           <div key={formule.id}>
             <h3>{formule.name}</h3>
-            <p>{formule.inputs.map((input) => input.label).join(", ")}</p>
             <p>{formule.formula}</p>
             <button type="button" id={formule.id} onClick={e => delFormula(formule.id)}>Удалить формулу</button>
           </div>
-        ))}
+        )) : <p className="minitext">Тут ничего нет</p>}
         <h2>Добавить формулу</h2>
         <input type="text" placeholder="Название формулы" onChange={(e) => setName(e.target.value)} value={Name}/>
         <input type="number" placeholder="Множитель вашей атк статы" onChange={(e) => HandleRedactModificator(e.target.value)} value={Mod}/>
@@ -146,6 +147,7 @@ export default function ManageFormules() {
         <input type="text" placeholder="Итоговая формула" value={newFormula} onChange={(e) => setnewFormula(e.target.value)}/>
         <button onClick={() => addNewFormula()}>Добавить</button>
       </div>
+      <Footer />
     </>
   );
 }

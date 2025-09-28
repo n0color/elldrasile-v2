@@ -10,17 +10,15 @@ const Router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    // errorElement: <Error404 />,
+    errorElement: <Error404 />,
   },
   {
     path: '/calc',
     element: <Calculate />,
-    // errorElement: <Error404 />,
   },
   {
     path: '/manage',
     element: <ManageFormules />,
-    // errorElement: <Error404 />,
   },
 ])
 createRoot(document.getElementById('root')).render(

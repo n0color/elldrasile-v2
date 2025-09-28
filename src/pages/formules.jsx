@@ -1,3 +1,4 @@
+import Footer from "../components/footer";
 import Header from "../components/header";
 import InputComponent from "../components/inputComponent";
 import "../styles/formules.scss";
@@ -212,7 +213,7 @@ export default function Calculate() {
       <div className="calcDiv">
         <h1>Калькулятор формул</h1>
         
-        <div>
+        <div className="inputComponent">
           <label htmlFor="formulaSelect">Выберите формулу:</label>
           <select 
             id="formulaSelect"
@@ -229,21 +230,20 @@ export default function Calculate() {
           Управление формулами
         </Link>
 
-        <div>
+        <div className="labels">
           <h3>Параметры:</h3>
           {
-            selectedFormula.inputs.map(input => (
-              <InputComponent
-                key={input.key}
-                value={inputs[input.key] || 0}
-                name={input.key}
-                rusName={input.label}
-                setValue={val => handleInputChange(input.key, val)}
-              />
-            ))
-          }
+              selectedFormula.inputs.map(input => (
+                <InputComponent
+                  key={input.key}
+                  value={inputs[input.key] || 0}
+                  name={input.key}
+                  rusName={input.label}
+                  setValue={val => handleInputChange(input.key, val)}
+                />
+              ))
+            }
         </div>
-
         {selectedFormula && (
           <>
             <div className="buttons">
@@ -254,12 +254,13 @@ export default function Calculate() {
             <div>
               Результат: {result}
             </div>
-            <div className="currentFormula">
+            <div className="minitext">
               <strong>Текущая формула:</strong> {selectedFormula.formula}
             </div>
           </>
         )}
       </div>
+      <Footer />
     </>
   );
 } 
