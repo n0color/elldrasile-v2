@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router'
 import Calculate from './pages/formules.jsx'
 import Error404 from './pages/error404.jsx'
 import ManageFormules from './pages/manageFormules.jsx'
+import Wiki from './pages/wiki.jsx'
+
 const Router = createBrowserRouter([
   {
     path: '/',
@@ -19,6 +21,10 @@ const Router = createBrowserRouter([
   {
     path: '/manage',
     element: <ManageFormules />,
+  },
+  {
+    path: '/wiki',
+    element: <Wiki />,
   },
 ])
 createRoot(document.getElementById('root')).render(

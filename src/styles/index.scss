@@ -48,7 +48,16 @@ h2 {
     font-size: 12px;
   } 
 }
-
+textarea {
+  width: 100%;
+  max-width: 780px;
+  padding: 8px 0px;
+  border: 1px solid #B1AB86;
+  border-radius: 8px;
+  font-size: 16px;  
+  background-color: #FEFAE0;
+  color: #0A400C;
+}
 input {
   width: 100%;
   max-width: 480px;

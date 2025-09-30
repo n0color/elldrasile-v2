@@ -1,0 +1,22 @@
+.flex {
+  gap: 5px;
+  width: 90%;
+  max-width: 780px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+.rows {
+ 
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  .note {
+    max-width: 780px;
+    text-wrap: wrap;
+    gap: 5px;
+  }
+}

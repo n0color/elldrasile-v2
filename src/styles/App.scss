@@ -43,13 +43,29 @@
       height: 30px;
     }
   }
-  .calc {
-    height: 50px;
-    @media (max-width: 768px) {
-      height: 30px;
+  .left {
+    display: flex;
+    gap: 15px;
+    @media (max-width: 380px) {
+      gap: 5px;
     }
-    @media (max-width: 480px) {
-      height: 20px;
+    .calc {
+      height: 50px;
+      @media (max-width: 768px) {
+        height: 30px;
+      }
+      @media (max-width: 480px) {
+        height: 20px;
+      }
+    }
+    .wiki {
+      height: 50px;
+      @media (max-width: 768px) {
+        height: 30px;
+      }
+      @media (max-width: 480px) {
+        height: 20;
+      }
     }
   }
 }
